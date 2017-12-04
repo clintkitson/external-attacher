@@ -90,5 +90,7 @@ func GetVolumeHandle(pv *v1.PersistentVolume) (string, bool, error) {
 	if pv.Spec.PersistentVolumeSource.CSI == nil {
 		return "", false, fmt.Errorf("persistent volume does not contain CSI volume source")
 	}
+	fmt.Printf("PV %+v",pv)
 	return pv.Spec.PersistentVolumeSource.CSI.VolumeHandle, pv.Spec.PersistentVolumeSource.CSI.ReadOnly, nil
+	//return pv.Spec.Source.PersistentVolumeName, pv.Spec.PersistentVolumeSource.CSI.ReadOnly, nil
 }

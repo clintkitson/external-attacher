@@ -41,7 +41,7 @@ const (
 	csiTimeout = time.Second
 
 	// Name of CSI plugin for dummy operation
-	dummyAttacherName = "csi/dummy"
+	dummyAttacherName = "com.thecodeteam.vfs"
 )
 
 // Command line flags

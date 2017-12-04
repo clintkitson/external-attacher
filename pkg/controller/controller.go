@@ -178,7 +178,8 @@ func (ctrl *CSIAttachController) syncVA() {
 		ctrl.vaQueue.AddRateLimited(vaName)
 		return
 	}
-	if va.Spec.Attacher != ctrl.attacherName {
+	glog.V(4).Infof("VA info %+v",va)
+	if ctrl.attacherName != "com.thecodeteam.vfs" {
 		glog.V(4).Infof("Skipping VolumeAttachment %s for attacher %s", va.Name, va.Spec.Attacher)
 		return
 	}
